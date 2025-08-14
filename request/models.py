@@ -4,8 +4,6 @@ from staff.models import Staff
 from django.core.validators import MaxValueValidator
 from datetime import date
 
-# Create your models here.
-
 class ServiceRequest(models.Model):
     STATUS_CHOICES = (
         ('pending', 'Pending'),
