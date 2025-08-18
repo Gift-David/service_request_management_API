@@ -21,10 +21,10 @@ class ServiceRequest(models.Model):
 
     title = models.CharField(max_length=100)
     description = models.TextField()
-    status = models.CharField(max_length=20, choices=STATUS_CHOICES)
-    priority = models.CharField(max_length=20, choices=PRIORITY_CHOICES)
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
     staff = models.ManyToManyField(Staff)
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES)
+    priority = models.CharField(max_length=20, choices=PRIORITY_CHOICES)
     created_at = models.DateField()
     updated_at = models.DateField()
 

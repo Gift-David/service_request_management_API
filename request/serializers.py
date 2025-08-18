@@ -4,8 +4,8 @@ from client.serializers import ClientSerializer
 from staff.serializers import StaffSerializer
 
 class ServiceRequestSerializer(serializers.ModelSerializer):
-    client = ClientSerializer(many=True, read_only=True)
-    staff = StaffSerializer()
+    clients = ClientSerializer(read_only=True)
+    staffs = StaffSerializer(many=True, read_only=True)
     class Meta:
         model = models.ServiceRequest
         fields = '__all__'
