@@ -4,6 +4,7 @@ from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.authentication import TokenAuthentication
 from . import serializers
 from . import models
+from .permissions import IsClient, IsStaff
 
 '''
 CRUD operation for the service requests model
@@ -11,12 +12,12 @@ CRUD operation for the service requests model
 class ServiceRequestCreateAPIView(generics.CreateAPIView):
     queryset = models.ServiceRequest.objects.all()
     serializer_class = serializers.ServiceRequestSerializer
-    # permission_classes = [IsAuthenticated, IsAdminUser]
+    permission_classes = [IsAuthenticated, IsAdminUser]
 
 class ServiceRequestListAPIView(generics.ListAPIView):
     queryset = models.ServiceRequest.objects.all()
     serializer_class = serializers.ServiceRequestSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, IsAdminUser or IsStaff]
 
 class ServiceRequestUpdateAPIView(generics.UpdateAPIView):
     queryset = models.ServiceRequest.objects.all()
@@ -27,12 +28,12 @@ class ServiceRequestUpdateAPIView(generics.UpdateAPIView):
 class ServiceRequestRetrieveAPIView(generics.RetrieveAPIView):
     queryset = models.ServiceRequest.objects.all()
     serializer_class = serializers.ServiceRequestSerializer
-    permission_classes = IsAuthenticated
+    permission_classes = [IsAuthenticated, ]
 
 class ServiceRequestDestroyAPIView(generics.DestroyAPIView):
     queryset = models.ServiceRequest.objects.all()
     serializer_class = serializers.ServiceRequestSerializer
-    permission_classes = IsAuthenticated
+    permission_classes = [IsAuthenticated]
 
 '''
 CRUD operation for the request note model
@@ -66,12 +67,14 @@ CRUD operation for the feedback model
 class FeedbackCreateAPIView(generics.CreateAPIView):
     queryset = models.Feedback.objects.all()
     serializer_class = serializers.FeedbackSerializer
+    permission_classes = [IsAuthenticated, IsClient]
 
 class FeedbackListAPIView(generics.ListAPIView):
     queryset = models.Feedback.objects.all()
     serializer_class = serializers.FeedbackSerializer
+    permission_classes = [IsAuthenticated]
 
-# To retrieve a particular request note
+# To retrieve a particular feedback
 class FeedbackRetrieveAPIView(generics.RetrieveAPIView):
     queryset = models.Feedback.objects.all()
     serializer_class = serializers.FeedbackSerializer
