@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from rest_framework import generics
+from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from .models import Staff
 from .serializers import StaffSerializer
 
@@ -8,6 +9,7 @@ from .serializers import StaffSerializer
 class StaffCreateAPIView(generics.CreateAPIView):
     queryset = Staff.objects.all()
     serializer_class = StaffSerializer
+    permission_classes = [IsAuthenticated, IsAdminUser]
 
 class StaffListAPIView(generics.ListAPIView):
     queryset = Staff.objects.all()
