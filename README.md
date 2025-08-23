@@ -6,32 +6,30 @@ The **Service Request Management API** is a custom built RESTful backend service
 ---
 
 ## Features
-- ### User Authentication:
+### User Authentication:
 - User registration and login (for admins, staff, and clients).
 - JWT authentication for secure API access.
 
-- ### User Authorization
+### User Authorization
 - #### Admin:
 - Access to all features
 - #### Staffs:
 - View requests they are assigned to
 - Send request notes to their assigned requests
 - View clients feedbacks for their assigned requests
-- #### Clients:
+#### Clients:
 - View their service requests
 - Send feedbacks for their requests
 
-- ### Client Management:
+### Client Management:
 - Create, update, and delete client profiles.
 - Store client details ( name, contact info, address).
-
-- ### Service Request Management:
+### Service Request Management:
 - Create, update, and delete service requests.
 - Assign requests to staff members.
 - Track request status (e.g., Pending, In Progress, Completed, Cancelled).
 - Add notes or comments to requests for communication.
-
-- ### Staff Management:
+### Staff Management:
 - Register and manage staff profiles.
 - Assign staff to specific service requests.
 
@@ -48,7 +46,7 @@ The **Service Request Management API** is a custom built RESTful backend service
 
 1. **Clone the repo**
 ```bash
-git clone https://github.com/yourusername/service-request-api.git
+git clone https://github.com/yourusername/service_request_management_API.git
 cd service-request-api
 ```
 
@@ -127,7 +125,6 @@ Authorization: Bearer <token>
 |                 | `/api/staffs/create/`                 | POST   | Admin      |
 |                 | `/api/staffs/edit/{id}/`              | POST   | Admin      |
 |                 | `/api/staffs/delete/<int:pk>/`        | POST   | Admin      |
-|-----------------|---------------------------------------|--------|------------|
 
 ---
 
@@ -143,4 +140,4 @@ Authorization: Bearer <token>
 MIT License 
 
 ## Author: David Gift
-Backend Developer. View his portfolio here
+Backend Developer. View his portfolio [here](https://github.com/Gift-David.git).
