@@ -25,18 +25,18 @@ class ServiceRequest(models.Model):
     staff = models.ManyToManyField(Staff)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES)
     priority = models.CharField(max_length=20, choices=PRIORITY_CHOICES)
-    created_at = models.DateField()
-    updated_at = models.DateField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now_add=True)
 
 class RequestNote(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
     request = models.ForeignKey(ServiceRequest, on_delete=models.CASCADE)
     staff = models.ForeignKey(Staff, on_delete=models.CASCADE)
-    created_at = models.DateField()
+    created_at = models.DateTimeField(auto_now_add=True)
 
 class Feedback(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
     request = models.ForeignKey(ServiceRequest, on_delete=models.CASCADE)
-    created_at = models.DateField()
+    created_at = models.DateTimeField(auto_now_add=True)

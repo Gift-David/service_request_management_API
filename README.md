@@ -17,7 +17,7 @@ The **Service Request Management API** is a custom built RESTful backend service
 - View requests they are assigned to
 - Send request notes to their assigned requests
 - View clients feedbacks for their assigned requests
-#### Clients:
+- #### Clients:
 - View their service requests
 - Send feedbacks for their requests
 
@@ -140,4 +140,4 @@ Authorization: Bearer <token>
 MIT License 
 
 ## Author: David Gift
-Backend Developer. View his portfolio [here](https://github.com/Gift-David.git).
+Backend Developer. View his portfolio [here](https://github.com/Gift-David).
