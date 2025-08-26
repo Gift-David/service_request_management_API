@@ -55,13 +55,6 @@ cd service-request-api
 pip install -r requirements.txt
 ```
 
-<!-- 3. **Setup environment variables**
-Create a `.env` file:
-```
-SECRET_KEY=your_secret_key
-DATABASE_URL=postgres://user:password@localhost:5432/servicerequests
-``` -->
-
 3. **Run migrations**
 ```bash
 python manage.py makemigrations
