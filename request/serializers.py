@@ -11,14 +11,14 @@ class ServiceRequestSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class RequestNoteSerializer(serializers.ModelSerializer):
-    request = ServiceRequestSerializer(many=True, read_only=True)
-    staff = StaffSerializer(many=True, read_only=True)
+    requests = ServiceRequestSerializer(read_only=True)
+    staffs = StaffSerializer(read_only=True)
     class Meta:
-        model = models.ServiceRequest
+        model = models.RequestNote
         fields = '__all__'
 
 class FeedbackSerializer(serializers.ModelSerializer):
-    request = ServiceRequestSerializer(many=True, read_only=True)
+    requests = ServiceRequestSerializer(many=True, read_only=True)
     class Meta:
         model = models.Feedback
         fields = '__all__'

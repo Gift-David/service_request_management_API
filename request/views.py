@@ -33,7 +33,7 @@ class ServiceRequestRetrieveAPIView(generics.RetrieveAPIView):
 class ServiceRequestDestroyAPIView(generics.DestroyAPIView):
     queryset = models.ServiceRequest.objects.all()
     serializer_class = serializers.ServiceRequestSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, IsAdminUser]
 
 '''
 CRUD operation for the request note model
@@ -42,6 +42,10 @@ CRUD operation for the request note model
 class RequestNoteCreateAPIView(generics.CreateAPIView):
     queryset = models.RequestNote.objects.all()
     serializer_class = serializers.RequestNoteSerializer
+    permission_classes = [IsAuthenticated]
+
+    # def perform_create(self, serializer):
+    #     serializer.save(staff=self.request.user)
 
 class RequestNoteListAPIView(generics.ListAPIView):
     queryset = models.RequestNote.objects.all()
@@ -56,6 +60,7 @@ class RequestNoteRetrieveAPIView(generics.RetrieveAPIView):
 class RequestNoteDestroyAPIView(generics.DestroyAPIView):
     queryset = models.RequestNote.objects.all()
     serializer_class = serializers.RequestNoteSerializer
+    permission_classes = [IsAuthenticated, IsAdminUser]
 
 
 '''
@@ -83,3 +88,4 @@ class FeedbackRetrieveAPIView(generics.RetrieveAPIView):
 class FeedbackDestroyAPIView(generics.DestroyAPIView):
     queryset = models.Feedback.objects.all()
     serializer_class = serializers.FeedbackSerializer
+    permission_classes = [IsAuthenticated, IsAdminUser]

@@ -7,7 +7,7 @@ class StaffSerializer(serializers.ModelSerializer):
     user = CustomUserSerializer(read_only=False)
     class Meta:
         model = Staff
-        fields = ['user', 'position']
+        fields = '__all__'
 
     def create(self, validated_data):
         user_data = validated_data.pop('user')

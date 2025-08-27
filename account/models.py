@@ -11,7 +11,7 @@ class CustomUser(AbstractUser):
         ('client', 'Client'),
     )
 
-    updated_at = models.DateField(default=timezone.now)
+    updated_at = models.DateField(auto_now_add=True)
     role = models.CharField(choices=CHOICES)
     address = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=100)

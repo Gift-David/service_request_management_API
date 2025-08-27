@@ -14,16 +14,20 @@ class StaffCreateAPIView(generics.CreateAPIView):
 class StaffListAPIView(generics.ListAPIView):
     queryset = Staff.objects.all()
     serializer_class = StaffSerializer
+    permission_classes = [IsAuthenticated, IsAdminUser]
 
 class StaffUpdateAPIView(generics.UpdateAPIView):
     queryset = Staff.objects.all()
     serializer_class = StaffSerializer
+    permission_classes = [IsAuthenticated, IsAdminUser]
 
 # To retrieve a particular staff
 class StaffRetrieveAPIView(generics.RetrieveAPIView):
     queryset = Staff.objects.all()
     serializer_class = StaffSerializer
+    permission_classes = [IsAuthenticated, IsAdminUser]
 
 class StaffDestroyAPIView(generics.DestroyAPIView):
     queryset = Staff.objects.all()
     serializer_class = StaffSerializer
+    permission_classes = [IsAuthenticated, IsAdminUser]
