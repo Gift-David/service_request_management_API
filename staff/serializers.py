@@ -15,3 +15,5 @@ class StaffSerializer(serializers.ModelSerializer):
         user_serializer.is_valid(raise_exception=True)
         user_instance = user_serializer.save()
         staff_instance = Staff.objects.create(user=user_instance, **validated_data)
+
+        return staff_instance
