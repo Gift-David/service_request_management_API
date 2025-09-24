@@ -1,7 +1,7 @@
 # Service Request Management API
 
 ## Overview
-The **Service Request Management API** is a custom built RESTful backend service for handling client service requests for service-based businesses. It supports authentication, request tracking, client/staff management, and feedback collection.
+The **Service Request Management API** is a custom built RESTful backend API service for handling client service requests for service-based businesses. It supports authentication, request tracking, client/staff management, and feedback collection.
 
 ---
 
